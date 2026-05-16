@@ -1,0 +1,108 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "cli": {
+    "schematicCollections": ["angular-eslint"],
+    "analytics": false
+  },
+  "projects": {
+    "clearway-docreader-ng": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "none",
+          "changeDetection": "OnPush",
+          "standalone": true,
+          "skipTests": true,
+          "path": "src/app/components"
+        },
+        "@schematics/angular:directive": {
+          "standalone": true,
+          "path": "src/app/directives",
+          "skipTests": true,
+          "name": "directive"
+        },
+        "@schematics/angular:pipe": {
+          "standalone": true,
+          "skipTests": true,
+          "path": "src/app/pipes",
+          "name": "pipe"
+        },
+        "@schematics/angular:service": {
+          "skipTests": true,
+          "path": "src/app/services",
+          "name": "service"
+        }
+      },
+      "root": "src",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.json",
+            "inlineStyleLanguage": "css",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": ["src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "2MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "dev": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "liveReload": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "clearway-docreader-ng:build:production"
+            },
+            "dev": {
+              "buildTarget": "clearway-docreader-ng:build:dev"
+            }
+          },
+          "defaultConfiguration": "dev"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
+        }
+      }
+    }
+  }
+}

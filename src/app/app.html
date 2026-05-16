@@ -1,0 +1,33 @@
+<div class="min-h-screen bg-gray-300">
+  <header class="bg-teal-700 top-0 z-50 shadow-[0_4px_12px_rgba(0,0,0,0.3)] sticky">
+    <div class="container mx-auto px-5 py-4">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-extrabold text-white">Docreader</h1>
+
+        @if (documentService.docResource.hasValue()) {
+          {{ documentService.docResource.value().name }}
+        }
+
+        <div class="flex gap-4 items-center">
+          <div class="flex gap-2 items-center">
+            <p-button rounded severity="contrast" size="small" (onClick)="zoomService.decrement()">
+              <ng-icon name="bootstrapDash" />
+            </p-button>
+
+            {{ zoomService.zoom() }}
+
+            <p-button rounded severity="contrast" size="small" (onClick)="zoomService.increment()">
+              <ng-icon name="bootstrapPlus" />
+            </p-button>
+          </div>
+
+          <p-button rounded severity="contrast" size="small" (onClick)="documentService.save()">Save</p-button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <router-outlet />
+  </main>
+</div>

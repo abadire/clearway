@@ -1,0 +1,17 @@
+<div class="py-6">
+  @let imagesList = imagesUrlsList$ | async;
+  @if (documentService.docResource.error()) {
+    <p class="text-center text-black text-xl font-bold">Not found</p>
+    <!-- с настоящим апи лучше использовать isLoading -->
+  } @else if (!documentService.docResource.hasValue() || areImagesLoading()) {
+    <div class="card flex justify-center">
+      <p-progress-spinner ariaLabel="loading" />
+    </div>
+  } @else {
+    <div class="flex flex-col gap-4">
+      @for (image of imagesList; track $index) {
+        <app-doc-image [image]="image" />
+      }
+    </div>
+  }
+</div>

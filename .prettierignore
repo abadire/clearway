@@ -1,0 +1,15 @@
+node_modules/
+pnpm-lock.yaml
+dist/
+.husky/
+.helm
+.werf
+docker/
+.eslintcache
+.stylelintcache
+werf.yaml
+/src/assets/i18n/
+.angular/
+coverage/
+CHANGELOG.md
+policy.yaml

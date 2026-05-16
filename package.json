@@ -1,0 +1,50 @@
+{
+  "name": "clearway-docreader",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "dev": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^21.0.8",
+    "@angular/compiler": "^21.0.8",
+    "@angular/core": "^21.0.8",
+    "@angular/forms": "^21.0.8",
+    "@angular/platform-browser": "^21.0.8",
+    "@angular/router": "^21.0.8",
+    "@ng-icons/bootstrap-icons": "^32.1.0",
+    "@ng-icons/core": "^32.1.0",
+    "@primeuix/themes": "^2.0.3",
+    "@tailwindcss/postcss": "^4.1.11",
+    "primeng": "^21.0.2",
+    "rxjs": "~7.8.0",
+    "tailwindcss": "^4.1.11",
+    "tailwindcss-primeui": "^0.6.1",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular-eslint/builder": "21.1.0",
+    "@angular-eslint/eslint-plugin": "^21.1.0",
+    "@angular-eslint/eslint-plugin-template": "^21.1.0",
+    "@angular-eslint/template-parser": "^21.1.0",
+    "@angular/build": "^21.0.5",
+    "@angular/cli": "^21.0.5",
+    "@angular/compiler-cli": "^21.0.8",
+    "@eslint/js": "^9.29.0",
+    "angular-eslint": "21.1.0",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.3",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "postcss": "^8.5.3",
+    "prettier": "^3.6.2",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "8.53.0"
+  }
+}
