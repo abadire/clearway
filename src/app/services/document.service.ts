@@ -11,7 +11,7 @@ interface Document {
   providedIn: 'root',
 })
 export class DocumentService {
-  docName = signal('');
+  docName = signal(''); // в простых случаях можно не заморачиваться с приватным полем и публичным через asReadonly
 
   docResource = httpResource<Document>(() => (this.docName() ? `docs/${this.docName()}/1.json` : undefined));
 
