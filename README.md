@@ -8,6 +8,8 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 pnpm run dev
 ```
 
+Документы открываются по названию папки в которой они расположены. В данном случае - http://localhost:4200/test%20doc
+
 ## Известные проблемы
 
 - Нет определения пересечений аннотаций. Решение - определить требования по пересечениям
