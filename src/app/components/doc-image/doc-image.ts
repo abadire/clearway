@@ -174,7 +174,7 @@ export class DocImage implements AfterViewInit {
       this.ctx.fillRect(startX * scale, startY * scale, width * scale, height * scale);
       this.ctx.globalAlpha = 1;
 
-      this.ctx.font = `${String(20 * scale)}px Arial`;
+      this.ctx.font = `${String(20 * scale)}px Comic Sans MS`;
       this.ctx.fillStyle = 'black';
       this.ctx.textAlign = 'center';
       this.ctx.textBaseline = 'middle';
